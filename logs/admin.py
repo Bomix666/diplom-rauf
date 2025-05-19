@@ -1,3 +1,2 @@
 from django.contrib import admin
-
-# Register your models here.
+# Пока нет моделей для регистрации в logs/admin.py
