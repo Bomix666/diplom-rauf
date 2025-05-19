@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="py-5 text-center">
+    <h1>Система бюджетирования</h1>
+    <p class="lead">Добро пожаловать в информационную систему для учёта, планирования и анализа бюджета организации.</p>
+    {% if user.is_authenticated %}
+        <a class="btn btn-success" href="/finance/">Перейти к финансам</a>
+    {% else %}
+        <a class="btn btn-primary" href="/login/">Войти</a>
+        <a class="btn btn-outline-primary" href="/register/">Регистрация</a>
+    {% endif %}
+</div>
+{% endblock %}

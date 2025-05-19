@@ -1,0 +1,10 @@
+body.dark-theme {
+    background-color: #181a1b;
+    color: #e4e6eb;
+}
+
+.navbar-dark.bg-primary {
+    background-color: #003366 !important;
+}
+
+/* Дополнительные стили для адаптивности и темной темы */
