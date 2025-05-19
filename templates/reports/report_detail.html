@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ report.title }}</h2>
+<p>Период: {{ report.period_start }} — {{ report.period_end }}<br>Тип: {{ report.get_report_type_display }}</p>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <h5>Доходы ({{ income_sum }} ₽)</h5>
+    <ul class="list-group mb-3">
+      {% for i in incomes %}
+        <li class="list-group-item">{{ i.amount }} ₽ — {{ i.category }} ({{ i.date }})</li>
+      {% empty %}
+        <li class="list-group-item">Нет доходов</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h5>Расходы ({{ expense_sum }} ₽)</h5>
+    <ul class="list-group mb-3">
+      {% for e in expenses %}
+        <li class="list-group-item">{{ e.amount }} ₽ — {{ e.category }} ({{ e.date }})</li>
+      {% empty %}
+        <li class="list-group-item">Нет расходов</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

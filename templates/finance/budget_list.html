@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Бюджетные планы</h2>
+  <a class="btn btn-success" href="{% url 'budget_create' %}">Создать план</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead class="table-light">
+    <tr>
+      <th>Отдел</th><th>Проект</th><th>Год</th><th>Месяц</th><th>План</th><th>Лимит</th><th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in budgets %}
+      <tr>
+        <td>{{ b.department }}</td>
+        <td>{{ b.project }}</td>
+        <td>{{ b.year }}</td>
+        <td>{{ b.month }}</td>
+        <td>{{ b.amount }}</td>
+        <td>{{ b.limit }}</td>
+        <td><a href="{% url 'budget_detail' b.pk %}" class="btn btn-primary btn-sm">Детали</a></td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="7">Нет данных</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
