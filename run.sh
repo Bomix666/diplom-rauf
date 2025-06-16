@@ -8,4 +8,4 @@ if [ "$1" = "testdata" ]; then
   exit 0
 fi
 
-python3 manage.py runserver 0.0.0.0:8000
+python3 manage.py runserver 
